@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBoekenTable extends Migration
+class CreateBooksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateBoekenTable extends Migration
      */
     public function up()
     {
-        Schema::create('boeken', function (Blueprint $table) {
+        Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('auteur');
@@ -32,6 +32,6 @@ class CreateBoekenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('boeken');
+        Schema::dropIfExists('books');
     }
 }
