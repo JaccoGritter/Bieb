@@ -15,7 +15,7 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
+            $table->string('titel');
             $table->string('auteur');
             $table->string('taal');
             $table->smallInteger('aantal_paginas');

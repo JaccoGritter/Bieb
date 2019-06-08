@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Book;
 
 class BookController extends Controller
 {
@@ -32,9 +33,34 @@ class BookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
-        //
+        //dd("ik ben er");
+
+        // $attributes = request()->validate([
+        //     'titel' => ['required', 'min:3'],
+        //     'auteur' => ['required', 'min:3'],
+        //     'taal' => ['required', 'min:2'],
+        //     'aantal_paginas' => 'required'
+        //     ]);
+
+        // $attributes = request();
+
+        // Book::create($attributes);
+
+        $book = new Book;
+
+        $book->titel = $request->titel;
+        $book->auteur = $request->auteur;
+        $book->taal = $request->taal;
+        $book->aantal_paginas = $request->aantal_paginas;
+        $book->opmerkingen = $request->opmerkingen;
+        $book->uitgeleend_aan = $request->uitgeleend_aan;
+
+        $book->save();
+
+        return redirect('/');
     }
 
     /**

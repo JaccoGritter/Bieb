@@ -5,17 +5,15 @@
 
    
         <!-- Boek toevoegen formulier -->
-        <form method="POST" action="/">
-        <!-- {{ method_field('PATCH')}} -->
+        <form method="POST" action="/books">
         <!-- {{ CSRF_field() }} -->
-        @method('PATCH')
         @csrf
 
         <h2>Mijn Boekenkast</h2>
 
         <div class="form-group">
             <label for="titel">Titel</label>
-            <input type="text" class="form-control" name="title" value="" required>
+            <input type="text" class="form-control" name="titel" value="" required>
         </div>
 
         <div class="form-group">
