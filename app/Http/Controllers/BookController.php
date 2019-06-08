@@ -56,9 +56,15 @@ class BookController extends Controller
         $book->auteur = $request->auteur;
         $book->taal = $request->taal;
         $book->aantal_paginas = $request->aantal_paginas;
-        $book->opmerkingen = $request->opmerkingen;
-        $book->uitgeleend_aan = $request->uitgeleend_aan;
 
+        if ($request->opmerkingen != NULL) {
+            $book->opmerkingen = $request->opmerkingen;
+        } else $book->opmerkingen = ' ';
+
+        if ($request->uitgeleend_aan != NULL) {
+            $book->uitgeleend_aan = $request->uitgeleend_aan;
+        } else $book->uitgeleend_aan = ' ';
+        
         $book->save();
 
         return redirect('/books');
