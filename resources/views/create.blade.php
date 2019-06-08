@@ -27,7 +27,7 @@
 
         <div class="form-group">
             <label for="aantal_paginas">Aantal paginas</label>
-            <input type="text" class="form-control" name="aantal_paginas" value="" >
+            <input type="number" class="form-control" name="aantal_paginas" value="" required>
         </div>
 
         <div class="form-group">
