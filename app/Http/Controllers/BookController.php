@@ -14,7 +14,9 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        $books = Book::all();
+
+        return view('books', compact('books'));
     }
 
     /**
@@ -24,7 +26,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -36,7 +38,6 @@ class BookController extends Controller
 
     public function store(Request $request)
     {
-        //dd("ik ben er");
 
         // $attributes = request()->validate([
         //     'titel' => ['required', 'min:3'],
@@ -60,7 +61,7 @@ class BookController extends Controller
 
         $book->save();
 
-        return redirect('/');
+        return redirect('/books');
     }
 
     /**
