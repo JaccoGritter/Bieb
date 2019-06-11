@@ -21,8 +21,13 @@
         </div>
 
         <div class="form-group">
-            <label for="taal">Taal</label>
-            <input type="text" class="form-control" name="taal" value="" required >
+        <label for="taal">Taal</label>
+            <select class="form-control" id="taal" name="taal">
+                <option value="nl">Nederlands</option>
+                <option value="en">Engels</option>
+                <option value="fr">Frans</option>
+                <option value="du">Duits</option>
+            </select>
         </div>
 
         <div class="form-group">
