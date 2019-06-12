@@ -9,6 +9,7 @@
         @csrf
 
         <h2>Mijn Boekenkast</h2>
+        <h6>Voeg een boek toe</h6>
 
         <div class="form-group">
             <label for="titel">Titel</label>
@@ -47,8 +48,8 @@
 
         <button type="submit" class="btn btn-primary mb-1">Voeg toe</button>
 
-    </form>
-    
+        </form>
+  
 
     <!-- TODO: Current Tasks -->
 @endsection
