@@ -48,8 +48,14 @@
             <input type="text" class="form-control" name="uitgeleend_aan" placeholder = "optioneel" value="{{ $book->uitgeleend_aan }}" >
         </div>
 
-        <button type="submit" class="btn btn-primary mb-1">Wijzig</button>
+        <button type="submit" class="btn btn-primary mb-1">Wijzig</button><br>
 
+        </form>
+        
+        <form action="{{ route('books.destroy', $book->id)}}" method="post">
+            @csrf
+            @method('DELETE')
+            <button class="btn btn-danger" type="submit">Verwijder</button>
         </form>
   
 @endsection

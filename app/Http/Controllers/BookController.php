@@ -67,9 +67,15 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+
+    // public function show($id)
+    // {
+    //     $book = Book::findOrFail($id);
+    //     return view('show', compact('book'));
+    // }
+
+    public function show(Book $book)
     {
-        $book = Book::findOrFail($id);
         return view('show', compact('book'));
     }
 
@@ -79,11 +85,9 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Book $book)
     {
-        $book = Book::findOrFail($id);
         return view('edit', compact('book'));
-        //return view('\edit', ['books'=>$book]);
     }
 
     /**
