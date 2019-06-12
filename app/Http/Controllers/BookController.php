@@ -38,18 +38,13 @@ class BookController extends Controller
 
     public function store(Request $request)
     {
-
-        // $attributes = request()->validate([
-        //     'titel' => ['required', 'min:3'],
-        //     'auteur' => ['required', 'min:3'],
-        //     'taal' => ['required', 'min:2'],
-        //     'aantal_paginas' => 'required'
-        //     ]);
-
-        // $attributes = request();
-
-        // Book::create($attributes);
-
+        $request->validate([
+            'titel'=>'required',
+            'auteur'=>'required',
+            'taal'=>'required',
+            'aantal_paginas'=>'required'
+        ]);
+        
         $book = new Book;
 
         $book->titel = $request->titel;
@@ -61,17 +56,9 @@ class BookController extends Controller
         $book->uitgeleend_aan = $request->uitgeleend_aan;
         if ($book->uitgeleend_aan == NULL) $book->uitgeleend_aan = " ";
 
-        // if ($request->opmerkingen != NULL) {
-        //     $book->opmerkingen = $request->opmerkingen;
-        // } else $book->opmerkingen = ' ';
-
-        // if ($request->uitgeleend_aan != NULL) {
-        //     $book->uitgeleend_aan = $request->uitgeleend_aan;
-        // } else $book->uitgeleend_aan = ' ';
-        
         $book->save();
 
-        return redirect('/books');
+        return redirect('\books');
     }
 
     /**
@@ -82,7 +69,8 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        //
+        $book = Book::findOrFail($id);
+        return view('show', compact('book'));
     }
 
     /**
@@ -93,9 +81,9 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        $book = Book::find($id);
+        $book = Book::findOrFail($id);
         return view('edit', compact('book'));
-        //return view('/edit', ['books'=>$book]);
+        //return view('\edit', ['books'=>$book]);
     }
 
     /**
@@ -114,7 +102,7 @@ class BookController extends Controller
             'aantal_paginas'=>'required'
         ]);
 
-        $book = Book::find($id);
+        $book = Book::findOrFail($id);
         $book->titel =  $request->get('titel');
         $book->auteur = $request->get('auteur');
         $book->taal = $request->get('taal');
@@ -123,6 +111,7 @@ class BookController extends Controller
         if ($book->opmerkingen == NULL) $book->opmerkingen = " ";
         $book->uitgeleend_aan = $request->get('uitgeleend_aan');
         if ($book->uitgeleend_aan == NULL) $book->uitgeleend_aan = " ";
+
         $book->save();
 
         return redirect('/books')->with('success', 'Boek aangepast!');
@@ -136,7 +125,7 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        $book = Book::find($id);
+        $book = Book::findOrFail($id);
         $book->delete();
 
         return redirect('/books')->with('success', 'Boek verwijderd!');
