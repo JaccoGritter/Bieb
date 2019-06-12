@@ -56,14 +56,18 @@ class BookController extends Controller
         $book->auteur = $request->auteur;
         $book->taal = $request->taal;
         $book->aantal_paginas = $request->aantal_paginas;
+        $book->opmerkingen = $request->opmerkingen;
+        if ($book->opmerkingen == NULL) $book->opmerkingen = " ";
+        $book->uitgeleend_aan = $request->uitgeleend_aan;
+        if ($book->uitgeleend_aan == NULL) $book->uitgeleend_aan = " ";
 
-        if ($request->opmerkingen != NULL) {
-            $book->opmerkingen = $request->opmerkingen;
-        } else $book->opmerkingen = ' ';
+        // if ($request->opmerkingen != NULL) {
+        //     $book->opmerkingen = $request->opmerkingen;
+        // } else $book->opmerkingen = ' ';
 
-        if ($request->uitgeleend_aan != NULL) {
-            $book->uitgeleend_aan = $request->uitgeleend_aan;
-        } else $book->uitgeleend_aan = ' ';
+        // if ($request->uitgeleend_aan != NULL) {
+        //     $book->uitgeleend_aan = $request->uitgeleend_aan;
+        // } else $book->uitgeleend_aan = ' ';
         
         $book->save();
 
@@ -89,7 +93,9 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        //
+        $book = Book::find($id);
+        return view('edit', compact('book'));
+        //return view('/edit', ['books'=>$book]);
     }
 
     /**
@@ -101,7 +107,25 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'titel'=>'required',
+            'auteur'=>'required',
+            'taal'=>'required',
+            'aantal_paginas'=>'required'
+        ]);
+
+        $book = Book::find($id);
+        $book->titel =  $request->get('titel');
+        $book->auteur = $request->get('auteur');
+        $book->taal = $request->get('taal');
+        $book->aantal_paginas = $request->get('aantal_paginas');
+        $book->opmerkingen = $request->get('opmerkingen');
+        if ($book->opmerkingen == NULL) $book->opmerkingen = " ";
+        $book->uitgeleend_aan = $request->get('uitgeleend_aan');
+        if ($book->uitgeleend_aan == NULL) $book->uitgeleend_aan = " ";
+        $book->save();
+
+        return redirect('/books')->with('success', 'Boek aangepast!');
     }
 
     /**
@@ -112,6 +136,9 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $book = Book::find($id);
+        $book->delete();
+
+        return redirect('/books')->with('success', 'Boek verwijderd!');
     }
 }
