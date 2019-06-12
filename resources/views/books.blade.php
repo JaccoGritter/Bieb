@@ -3,7 +3,19 @@
 
 @section('content')
 
+<div>
+  @if(session()->get('success'))
+    <div class="alert alert-success">
+      {{ session()->get('success') }}  
+    </div>
+  @endif
+</div>
+
 <h2>Welkom in de boekenkast</h2>
+
+<div style = "margin: 19px;">
+    <a href="{{ route('books.create')}}" class="btn btn-primary">Nieuw boek</a>
+</div>
 
 <table class="table">
 
@@ -40,7 +52,5 @@
 
     </tablebody>
 </table>
-
-<a href="/books/create">Voeg boek toe</a>
 
 @endsection('content')
