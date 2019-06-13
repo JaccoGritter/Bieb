@@ -37,8 +37,8 @@
         </div>
 
         <div class="form-group">
-            <label for="opmerkingen">Opmerkingen</label>
-            <input type="text" class="form-control" name="opmerkingen" value="" placeholder = "optioneel" >
+            <label for="isbn">ISBN nummer</label>
+            <input type="text" class="form-control" name="isbn" value="" required >
         </div>
 
         <div class="form-group">

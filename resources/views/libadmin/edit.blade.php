@@ -39,8 +39,8 @@
         </div>
 
         <div class="form-group">
-            <label for="opmerkingen">Opmerkingen</label>
-            <input type="text" class="form-control" name="opmerkingen" placeholder = "optioneel" value="{{ $book->opmerkingen }}"  >
+            <label for="isbn">ISBN nummer</label>
+            <input type="text" class="form-control" name="isbn" value="{{ $book->isbn }}" required disabled >
         </div>
 
         <div class="form-group">

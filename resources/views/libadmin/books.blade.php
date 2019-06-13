@@ -24,6 +24,7 @@
             <th>Titel</th>
             <th>Taal</th>
             <th>Pagina's</th>
+            <th>ISBN</th>
         </tr>
     </tablehead>
 
@@ -35,6 +36,7 @@
             <td><a href ="{{route('books.show', $book->id) }}">{{ $book->titel }}</a></td>
             <td>{{ $book->taal }}</td>
             <td>{{ $book->aantal_paginas }}</td>
+            <td>{{ $book->isbn }}</td>
         </tr>
         @endforeach
 

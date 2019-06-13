@@ -42,7 +42,8 @@ class BookController extends Controller
             'titel'=>'required',
             'auteur'=>'required',
             'taal'=>'required',
-            'aantal_paginas'=>'required'
+            'aantal_paginas'=>'required',
+            'isbn'=>'required|unique:books,isbn'
         ]);
         
         $book = new Book;
@@ -51,8 +52,7 @@ class BookController extends Controller
         $book->auteur = $request->auteur;
         $book->taal = $request->taal;
         $book->aantal_paginas = $request->aantal_paginas;
-        $book->opmerkingen = $request->opmerkingen;
-        if ($book->opmerkingen == NULL) $book->opmerkingen = " ";
+        $book->isbn = $request->isbn;
         $book->uitgeleend_aan = $request->uitgeleend_aan;
         if ($book->uitgeleend_aan == NULL) $book->uitgeleend_aan = " ";
 
@@ -111,8 +111,7 @@ class BookController extends Controller
         $book->auteur = $request->get('auteur');
         $book->taal = $request->get('taal');
         $book->aantal_paginas = $request->get('aantal_paginas');
-        $book->opmerkingen = $request->get('opmerkingen');
-        if ($book->opmerkingen == NULL) $book->opmerkingen = " ";
+        //$book->isbn = $request->get('isbn');
         $book->uitgeleend_aan = $request->get('uitgeleend_aan');
         if ($book->uitgeleend_aan == NULL) $book->uitgeleend_aan = " ";
 
