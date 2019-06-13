@@ -17,8 +17,13 @@
         <nav class="navbar navbar-default">
             <!-- Navbar Contents -->
         </nav>
-
-    <h2>Welkom bij de bibliotheek</h1>
+    <div class="container">
+        <h2>Welkom bij de bibliotheek</h1>
+        <br>
+        <p>Ga verder als:</p><br>
+        <p><a href="{{ route('books.index')}}">Bibliotheekmedewerker</a></p>
+        <p>Abonnementshouder</p>
+    </div>
 
 </body>
 
