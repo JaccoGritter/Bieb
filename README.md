@@ -23,10 +23,12 @@
 <tr><td>uitgeleend_aan</td><td>abonnee idno of NULL indien niet uitgeleend</td></tr>
 </table>
 <br>
-<b>User</b>
+<b>Member</b>
 <table>
-<tr><td>userid</td><td>id van de abonnee</td></tr>
-<tr><td>naam</td><td>gebruikersnaam</td></tr>
+<tr><td>memberid</td><td>id van de abonnee</td></tr>
+<tr><td>voornaam</td><td>voornaam gebruiker</td></tr>
+<tr><td>achternaam</td><td>achternaam gebruiker</td></tr>
+<tr><td>woonplaats</td><td>woonplaats gebruiker</td></tr>
 <tr><td>abo_geldig_tot</td><td>wanneer het lidmaatschap afloopt</td></tr>
 </table>
 <b>LentBooks</b>
