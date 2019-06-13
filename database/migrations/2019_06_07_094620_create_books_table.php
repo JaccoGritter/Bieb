@@ -19,7 +19,7 @@ class CreateBooksTable extends Migration
             $table->string('auteur');
             $table->string('taal');
             $table->smallInteger('aantal_paginas');
-            $table->text('isbn');
+            $table->integer('isbn');
             $table->string('uitgeleend_aan');
             $table->timestamps();
         });

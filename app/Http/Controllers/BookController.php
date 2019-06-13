@@ -42,9 +42,10 @@ class BookController extends Controller
             'titel'=>'required',
             'auteur'=>'required',
             'taal'=>'required',
-            'aantal_paginas'=>'required',
-            'isbn'=>'required|unique:books,isbn'
+            'aantal_paginas'=>['required', 'numeric', 'max:32000'],
+            'isbn'=>['required', 'numeric', 'digits:5', 'unique:books,isbn']
         ]);
+            // In real life isbn has 13 digits but this is not practical for this project
         
         $book = new Book;
 
@@ -103,7 +104,7 @@ class BookController extends Controller
             'titel'=>'required',
             'auteur'=>'required',
             'taal'=>'required',
-            'aantal_paginas'=>'required'
+            'aantal_paginas'=>['required', 'numeric', 'max:32000']
         ]);
 
         $book = Book::findOrFail($id);
