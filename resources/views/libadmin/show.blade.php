@@ -13,7 +13,7 @@
 </table>
 
 <div style="margin: 19px;">
-    <a href="/" class="btn btn-primary">Home</a>
+    <a href="/books" class="btn btn-primary">Home</a>
     <a href="{{ route('books.edit', $book->id) }}" class="btn btn-secondary">Wijzig</a>
 </div>
 
