@@ -1,16 +1,16 @@
 <h2>BIEB<h2>
 
-This is a library web app for two types of users:
+<p>This is a library web app for two types of users:</p>
 
-Library administrator
-Library subscriber
+<p>Library administrator</p>
+<p>Library subscriber</p>
 
-Among other things, basically:
-The administrator can add books and subscribers and should be able to do several kinds of data queries
-The subscribers can view books, make reservations and do queries
+<p>Among other things, basically:</p>
+<p>The administrator can add books and subscribers and should be able to do several kinds of data queries</p>
+<p>The subscribers can view books, make reservations and do queries</p>
 <br>
 
-<h4>Models<h4>:
+<h4>Models:<h4>
 <br>
 <b>Book</b>
 <table>
