@@ -8,7 +8,7 @@
         <!-- {{ CSRF_field() }} -->
         @csrf
 
-        <h2>Mijn Boekenkast</h2>
+        <h2>Bibliotheek</h2>
         <h6>Voeg een boek toe</h6>
 
         <div class="form-group">
@@ -58,6 +58,4 @@
 
         </form>
   
-
-    <!-- TODO: Current Tasks -->
 @endsection
