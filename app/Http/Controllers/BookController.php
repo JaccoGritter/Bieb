@@ -19,6 +19,8 @@ class BookController extends Controller
         return view('libadmin.books', compact('books'));
     }
 
+    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -26,7 +28,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('libadmin.create');
+        return view('libadmin.createbook');
     }
 
     /**
