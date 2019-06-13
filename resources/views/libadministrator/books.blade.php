@@ -1,4 +1,4 @@
-@extends('layouts\layout')
+@extends('layouts\libadministratorLayout')
 
 @section('content')
 
@@ -10,7 +10,7 @@
 @endif
 
 
-<h2>Welkom in de boekenkast</h2>
+<h2>Overzicht boeken</h2>
 
 <div style="margin: 19px;">
     <a href="{{ route('books.create')}}" class="btn btn-primary">Nieuw boek</a>
@@ -32,7 +32,7 @@
         @foreach ($books as $book)
         <tr>
             <td>{{ $book->auteur }}</td>
-            <td><a href =" {{route('books.show', $book->id) }}">{{ $book->titel }}</a></td>
+            <td><a href ="{{route('books.show', $book->id) }}">{{ $book->titel }}</a></td>
             <td>{{ $book->taal }}</td>
             <td>{{ $book->aantal_paginas }}</td>
         </tr>

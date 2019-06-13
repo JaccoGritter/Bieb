@@ -16,7 +16,7 @@ class BookController extends Controller
     {
         $books = Book::all();
 
-        return view('books', compact('books'));
+        return view('libadministrator.books', compact('books'));
     }
 
     /**
@@ -26,7 +26,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('libadministrator.create');
     }
 
     /**
@@ -76,7 +76,7 @@ class BookController extends Controller
 
     public function show(Book $book)
     {
-        return view('show', compact('book'));
+        return view('libadministrator.show', compact('book'));
     }
 
     /**
@@ -87,7 +87,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        return view('edit', compact('book'));
+        return view('libadministrator.edit', compact('book'));
     }
 
     /**
