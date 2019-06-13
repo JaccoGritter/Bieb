@@ -10,7 +10,9 @@
 @endif
 
 
-<h2>Overzicht boeken</h2>
+<h5><a href="{{ route('members.index')}}">naar leden</a></h5>
+<h2>Overzicht boeken</h2> 
+
 
 <div style="margin: 19px;">
     <a href="{{ route('books.create')}}" class="btn btn-primary">Nieuw boek</a>
