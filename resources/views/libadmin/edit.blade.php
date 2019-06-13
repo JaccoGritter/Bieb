@@ -40,7 +40,7 @@
 
         <div class="form-group">
             <label for="isbn">ISBN nummer</label>
-            <input type="text" class="form-control" name="isbn" value="{{ $book->isbn }}" required disabled >
+            <input type="number" class="form-control" name="isbn" value="{{ $book->isbn }}" required disabled >
         </div>
 
         <div class="form-group">
@@ -49,6 +49,14 @@
         </div>
 
         <button type="submit" class="btn btn-primary mb-1">Wijzig</button><br>
+
+        <div class="bg-danger text-light">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li> {{ $error }} </li>
+                @endforeach
+            </ul>
+        </div>
 
         </form>
         
