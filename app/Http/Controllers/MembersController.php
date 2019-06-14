@@ -59,10 +59,35 @@ use App\Member;
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Member $member)
     {
-        //
+        return view('libmember.memberIndex', compact('member'));
+
     }
+
+    /** 
+     * Display all members to a member
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function memberLogin()
+    {
+        $members = Member::all();
+        return view('libmember.login', compact('members'));
+    }
+
+     /** 
+     * Display a member
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    // public function memberIndex(Member $member)
+    // {
+       
+    //     return view('libmember.memberIndex', compact('member'));
+    // }
 
     /**
      * Show the form for editing the specified resource.
