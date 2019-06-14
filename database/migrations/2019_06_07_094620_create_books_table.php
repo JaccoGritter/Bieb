@@ -18,6 +18,7 @@ class CreateBooksTable extends Migration
             $table->string('titel');
             $table->string('auteur');
             $table->string('taal');
+            $table->string('genre');
             $table->smallInteger('aantal_paginas');
             $table->integer('isbn');
             $table->string('uitgeleend_aan');

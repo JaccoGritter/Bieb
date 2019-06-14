@@ -10,6 +10,7 @@ class Book extends Model
         'titel',
         'auteur',
         'taal',
+        'genre',
         'aantal_paginas',
         'isbn',
         'uitgeleend_aan'       

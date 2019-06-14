@@ -8,6 +8,14 @@
         <!-- {{ CSRF_field() }} -->
         @csrf
 
+        <div class="bg-danger text-light">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li> {{ $error }} </li>
+                @endforeach
+            </ul>
+        </div>
+
         <h2>Bibliotheek</h2>
         <h6>Voeg een boek toe</h6>
 
@@ -23,11 +31,23 @@
 
         <div class="form-group">
         <label for="taal">Taal</label>
-            <select class="form-control" id="taal" name="taal" {{old('taal')}}>
+            <select class="form-control" id="taal" name="taal" value = "{{old('taal')}}">
                 <option value="nl">Nederlands</option>
                 <option value="en">Engels</option>
                 <option value="fr">Frans</option>
                 <option value="du">Duits</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+        <label for="taal">Genre</label>
+            <select class="form-control" id="genre" name="genre" value = "{{old('Genre')}}">
+                <option value="Roman">Roman</option>
+                <option value="Science Fiction">Science Fiction</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Humor">Humor</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Biografie">Biografie</option>
             </select>
         </div>
 
@@ -48,13 +68,6 @@
 
         <button type="submit" class="btn btn-primary mb-1">Voeg toe</button>
 
-        <div class="bg-danger text-light">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li> {{ $error }} </li>
-                @endforeach
-            </ul>
-        </div>
 
         </form>
   

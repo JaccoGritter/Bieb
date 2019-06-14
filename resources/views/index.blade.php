@@ -22,7 +22,7 @@
         <br>
         <p>Ga verder als:</p><br>
         <p><a href="{{ route('books.index')}}">Bibliotheekmedewerker</a></p>
-        <p>Abonnementshouder</p>
+        <p><a href="#">Abonnementshouder</p>
     </div>
 
 </body>

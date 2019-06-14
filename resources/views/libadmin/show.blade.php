@@ -7,6 +7,7 @@
 <br>
 <table class="table table-bordered">
     <tr><td>Taal: </td><td>{{ $book->taal}} </td></tr>
+    <tr><td>Genre: </td><td>{{ $book->genre}} </td></tr>
     <tr><td>Aantal pagina's: </td><td>{{ $book->aantal_paginas}} </td></tr>
     <tr><td>ISBN nummer: </td><td>{{ $book->isbn}} </td></tr>
     <tr><td>Uitgeleend aan: </td><td>{{ $book->uitgeleend_aan}} </td></tr>
