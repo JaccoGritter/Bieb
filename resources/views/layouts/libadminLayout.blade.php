@@ -10,6 +10,12 @@
 
     <title>Bibliotheek</title>
     <!-- CSS And JavaScript -->
+    <style>
+    body {
+        background-color:#d1e2ff;
+    }
+    </style>
+
 </head>
 
 <body>

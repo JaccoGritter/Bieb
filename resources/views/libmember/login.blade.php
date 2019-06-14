@@ -2,9 +2,9 @@
 
 @section('content')
 
-Welkom
+<h4>Welkom</h4>
 
-Log in:
+<p>Log in:</p>
 
 <table class="table">
     <tablehead>

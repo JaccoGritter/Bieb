@@ -10,6 +10,11 @@
 
     <title>Bibliotheek</title>
     <!-- CSS And JavaScript -->
+    <style>
+        body {
+            background-color:honeydew;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,6 +28,7 @@
         <p>Ga verder als:</p><br>
         <p><a href="{{ route('books.index')}}">Bibliotheekmedewerker</a></p>
         <p><a href="{{ route('members.memberLogin')}}">Abonnementshouder</a></p>
+        <img src="{{ asset('pictures/boeken.jpg') }}">
     </div>
 
 </body>
