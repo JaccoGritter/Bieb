@@ -140,4 +140,9 @@ class BookController extends Controller
 
         return redirect('/books')->with('success', 'Boek verwijderd!');
     }
+
+    public function findBooks()
+    {
+        return view('libmember/results');
+    }
 }

@@ -18,7 +18,7 @@ Route::get('/', function(){
 });
 
 Route::get('libmember/', 'MembersController@memberLogin')->name('members.memberLogin');
-//Route::get('libmember/memberindex/', 'MembersController@memberIndex')->name('members.memberIndex');
+Route::get('books/findbooks', 'BookController@findBooks')->name('books.findBooks');
 
 Route::resource('books', 'BookController');
 Route::resource('members', 'MembersController');
