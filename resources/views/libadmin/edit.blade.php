@@ -10,6 +10,14 @@
         @method('PATCH')
         @csrf
 
+        <div class="bg-danger text-light">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li> {{ $error }} </li>
+                @endforeach
+            </ul>
+        </div>
+
         <h2>Mijn Boekenkast</h2>
         <h6>Wijzig boekgegevens</h6>
 
@@ -25,11 +33,23 @@
 
         <div class="form-group">
         <label for="taal">Taal</label>
-            <select class="form-control" id="taal" name="taal" value="{{ $book->taal }}"">
-                <option value="nl">Nederlands</option>
-                <option value="en">Engels</option>
-                <option value="fr">Frans</option>
-                <option value="du">Duits</option>
+            <select class="form-control" id="taal" name="taal">
+                <option value="nl" <?php if ($book->taal == "nl") echo 'selected'?> >Nederlands</option>
+                <option value="en" <?php if ($book->taal == "en") echo 'selected'?> >Engels</option>
+                <option value="fr" <?php if ($book->taal == "fr") echo 'selected'?> >Frans</option>
+                <option value="du" <?php if ($book->taal == "du") echo 'selected'?> >Duits</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+        <label for="taal">Genre</label>
+            <select class="form-control" id="genre" name="genre">
+                <option value="Roman" <?php if ($book->genre == "Roman") echo 'selected'?> >Roman</option>
+                <option value="Science Fiction" <?php if ($book->genre == "Science Fiction") echo 'selected'?> >Science Fiction</option>
+                <option value="Thriller" <?php if ($book->genre == "Thriller") echo 'selected'?> >Thriller</option>
+                <option value="Humor" <?php if ($book->genre == "Humor") echo 'selected'?>>Humor</option>
+                <option value="Fantasy" <?php if ($book->genre == "Fantasy") echo 'selected'?>>Fantasy</option>
+                <option value="Biografie" <?php if ($book->genre == "Biografie") echo 'selected'?>>Biografie</option>
             </select>
         </div>
 
@@ -50,13 +70,6 @@
 
         <button type="submit" class="btn btn-primary mb-1">Wijzig</button><br>
 
-        <div class="bg-danger text-light">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li> {{ $error }} </li>
-                @endforeach
-            </ul>
-        </div>
 
         </form>
         
