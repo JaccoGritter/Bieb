@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
+use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
 {
@@ -59,7 +60,6 @@ class BookController extends Controller
         $book->aantal_paginas = $request->aantal_paginas;
         $book->isbn = $request->isbn;
         $book->uitgeleend_aan = $request->uitgeleend_aan;
-        if ($book->uitgeleend_aan == NULL) $book->uitgeleend_aan = " ";
 
         $book->save();
 
@@ -120,7 +120,6 @@ class BookController extends Controller
         $book->aantal_paginas = $request->get('aantal_paginas');
         //$book->isbn = $request->get('isbn');
         $book->uitgeleend_aan = $request->get('uitgeleend_aan');
-        if ($book->uitgeleend_aan == NULL) $book->uitgeleend_aan = " ";
 
         $book->save();
 
@@ -141,8 +140,14 @@ class BookController extends Controller
         return redirect('/books')->with('success', 'Boek verwijderd!');
     }
 
-    public function findBooks()
+    public function findBooks(Request $request)
     {
-        return view('libmember/results');
+        $auteur = $request->input('auteur');
+
+        $books = DB::table('books')
+                ->where('auteur', 'like', $auteur)
+                ->get();
+
+        return view('libmember/results', compact('books'));
     }
 }
