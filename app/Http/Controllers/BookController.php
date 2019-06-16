@@ -47,9 +47,9 @@ class BookController extends Controller
             'taal'=>'required',
             'genre'=>'required',
             'aantal_paginas'=>['required', 'numeric', 'max:32000'],
-            'isbn'=>['required', 'numeric', 'digits:5', 'unique:books,isbn']
+            'isbn'=>['required', 'numeric', 'size:13', 'unique:books,isbn']
         ]);
-            // In real life isbn has 13 digits but this is not practical for this project
+            
         
         $book = new Book;
 
@@ -145,8 +145,8 @@ class BookController extends Controller
         $auteur = $request->input('auteur');
 
         $books = DB::table('books')
-                ->where('auteur', 'like', $auteur)
-                ->get();
+            ->where('auteur', 'like', $auteur)
+            ->get();
 
         return view('libmember/results', compact('books'));
     }
