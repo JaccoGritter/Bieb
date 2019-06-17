@@ -20,7 +20,7 @@
     @foreach ($books as $book)
     <tr>
         <td>{{ $book->auteur }}</td>
-        <td>{{ $book->titel }}</a></td>
+        <td><a href ="{{route('books.membershow', $book->id) }}">{{ $book->titel }}</a></td>
         <td>{{ $book->taal }}</td>
         <td>{{ $book->genre }}</td>
         <td>{{ $book->aantal_paginas }}</td>
