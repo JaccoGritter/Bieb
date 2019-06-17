@@ -61,6 +61,7 @@ use App\Member;
      */
     public function show(Member $member)
     {
+        session(['loggedinUser' => $member->id]);
         return view('libmember.memberIndex', compact('member'));
 
     }

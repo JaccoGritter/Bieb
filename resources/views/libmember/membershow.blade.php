@@ -12,9 +12,9 @@
     <tr><td>ISBN nummer: </td><td>{{ $book->isbn}} </td></tr>
 </table>
 
-<!-- <div style="margin: 19px;">
-    <a href="/books" class="btn btn-primary">Home</a>
-    <a href="{{ route('books.edit', $book->id) }}" class="btn btn-secondary">Wijzig</a>
-</div> -->
+<div style="margin: 19px;">
+    <a href="{{ route('members.show', session('loggedinUser') ) }}" class="btn btn-primary">Home</a>
+    <a href="#" class="btn btn-secondary">Leen boek</a>
+</div>
 
 @endsection('content')
