@@ -13,7 +13,7 @@ class Book extends Model
         'genre',
         'aantal_paginas',
         'isbn',
-        'uitgeleend_aan'       
+        'aantal_aanwezig'       
     ];
 }
 

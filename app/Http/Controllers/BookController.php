@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
+use App\Lentbook;
 use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
@@ -15,7 +16,10 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Book::all();
+
+        // $books = Book::all();
+        $criterium = "auteur";
+        $books = DB::table('books')->orderBy($criterium, 'asc')->get();
 
         return view('libadmin.books', compact('books'));
     }
@@ -47,7 +51,7 @@ class BookController extends Controller
             'taal'=>'required',
             'genre'=>'required',
             'aantal_paginas'=>['required', 'numeric', 'max:32000'],
-            'isbn'=>['required', 'numeric', 'size:13', 'unique:books,isbn']
+            'isbn'=>['required', 'digits:13', 'unique:books,isbn']
         ]);
             
         
@@ -59,7 +63,7 @@ class BookController extends Controller
         $book->genre = $request->genre;
         $book->aantal_paginas = $request->aantal_paginas;
         $book->isbn = $request->isbn;
-        $book->uitgeleend_aan = $request->uitgeleend_aan;
+        $book->aantal_aanwezig = $request->aantal_aanwezig;
 
         $book->save();
 
@@ -82,6 +86,11 @@ class BookController extends Controller
     public function show(Book $book)
     {
         return view('libadmin.show', compact('book'));
+    }
+
+    public function membershow(Book $book)
+    {
+        return view('libmember.membershow', compact('book'));
     }
 
     /**
@@ -119,7 +128,7 @@ class BookController extends Controller
         $book->genre = $request->get('genre');
         $book->aantal_paginas = $request->get('aantal_paginas');
         //$book->isbn = $request->get('isbn');
-        $book->uitgeleend_aan = $request->get('uitgeleend_aan');
+        $book->aantal_aanwezig = $request->get('aantal_aanwezig');
 
         $book->save();
 
@@ -145,9 +154,23 @@ class BookController extends Controller
         $auteur = $request->input('auteur');
 
         $books = DB::table('books')
-            ->where('auteur', 'like', $auteur)
+            ->where('auteur', 'like', "%".$auteur."%")
             ->get();
 
         return view('libmember/results', compact('books'));
     }
+
+    public function lendBook($id)
+    {
+        $book = Book::findOrFail($id);
+
+        $lentbook = new Lentbook;
+        $lentbook->bookId = $book->id;
+        $lentbook->memberid = session("loggedinUser");
+        $lentbook->lentfrom = now();
+        $lentbook->save();
+
+        return view('libmember/lend', compact('book'));
+    }
+
 }

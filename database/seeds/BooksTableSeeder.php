@@ -19,7 +19,7 @@ class BooksTableSeeder extends Seeder
             'genre' => 'roman',
             'aantal_paginas' => rand(100,600),
             'isbn' => rand(1000000000000,9999999999999),
-            'uitgeleend_aan' => NULL
+            'aantal_aanwezig' => rand(0,5)
             ],
             [
             'titel' => 'The Hobbit',
@@ -28,7 +28,7 @@ class BooksTableSeeder extends Seeder
             'genre' => 'fantasy',
             'aantal_paginas' => rand(100,600),
             'isbn' => rand(1000000000000,9999999999999),
-            'uitgeleend_aan' => NULL
+            'aantal_aanwezig' => rand(0,5)
             ],
             [
             'titel' => 'De Avonden',
@@ -37,7 +37,7 @@ class BooksTableSeeder extends Seeder
             'genre' => 'roman',
             'aantal_paginas' => rand(100,600),
             'isbn' => rand(1000000000000,9999999999999),
-            'uitgeleend_aan' => NULL
+            'aantal_aanwezig' => rand(0,5)
             ],
             [
             'titel' => 'Das Grosse Haus',
@@ -46,7 +46,7 @@ class BooksTableSeeder extends Seeder
             'genre' => 'humor',
             'aantal_paginas' => rand(100,600),
             'isbn' => rand(1000000000000,9999999999999),
-            'uitgeleend_aan' => NULL
+            'aantal_aanwezig' => rand(0,5)
             ],
             [
             'titel' => 'La Parisienne',
@@ -55,7 +55,7 @@ class BooksTableSeeder extends Seeder
             'genre' => 'thriller',
             'aantal_paginas' => rand(100,600),
             'isbn' => rand(1000000000000,9999999999999),
-            'uitgeleend_aan' => NULL
+            'aantal_aanwezig' => rand(0,5)
             ],
             [
             'titel' => 'Dik Trom',
@@ -64,7 +64,7 @@ class BooksTableSeeder extends Seeder
             'genre' => 'humor',
             'aantal_paginas' => rand(100,600),
             'isbn' => rand(1000000000000,9999999999999),
-            'uitgeleend_aan' => NULL
+            'aantal_aanwezig' => rand(0,5)
             ],
             [
             'titel' => 'Laravel for dummies',
@@ -73,7 +73,7 @@ class BooksTableSeeder extends Seeder
             'genre' => 'roman',
             'aantal_paginas' => rand(100,600),
             'isbn' => rand(1000000000000,9999999999999),
-            'uitgeleend_aan' => NULL
+            'aantal_aanwezig' => rand(0,5)
             ],
             [
             'titel' => 'De klokkenluider van de Notre Dame',
@@ -82,7 +82,7 @@ class BooksTableSeeder extends Seeder
             'genre' => 'roman',
             'aantal_paginas' => rand(100,600),
             'isbn' => rand(1000000000000,9999999999999),
-            'uitgeleend_aan' => NULL
+            'aantal_aanwezig' => rand(0,5)
             ],
             [
             'titel' => 'Christine',
@@ -91,7 +91,43 @@ class BooksTableSeeder extends Seeder
             'genre' => 'horror',
             'aantal_paginas' => rand(100,600),
             'isbn' => rand(1000000000000,9999999999999),
-            'uitgeleend_aan' => NULL
+            'aantal_aanwezig' => rand(0,5)
+            ],
+            [
+            'titel' => 'Bartje',
+            'auteur' => 'Pietje',
+            'taal' => 'nl',
+            'genre' => 'roman',
+            'aantal_paginas' => rand(100,600),
+            'isbn' => rand(1000000000000,9999999999999),
+            'aantal_aanwezig' => rand(0,5)
+            ],
+            [
+            'titel' => 'De Glazen Muur',
+            'auteur' => 'Berend Botje',
+            'taal' => 'nl',
+            'genre' => 'thriller',
+            'aantal_paginas' => rand(100,600),
+            'isbn' => rand(1000000000000,9999999999999),
+            'aantal_aanwezig' => rand(0,5)
+            ],
+            [
+            'titel' => 'Brief aan de Buurnman',
+            'auteur' => 'Ellen de Jong',
+            'taal' => 'nl',
+            'genre' => 'thrillerr',
+            'aantal_paginas' => rand(100,600),
+            'isbn' => rand(1000000000000,9999999999999),
+            'aantal_aanwezig' => rand(0,5)
+            ],
+            [
+            'titel' => 'The Lord of the Rings',
+            'auteur' => 'Tolkien',
+            'taal' => 'en',
+            'genre' => 'fantasy',
+            'aantal_paginas' => rand(100,600),
+            'isbn' => rand(1000000000000,9999999999999),
+            'aantal_aanwezig' => rand(0,5)
             ]
         ]);
     }

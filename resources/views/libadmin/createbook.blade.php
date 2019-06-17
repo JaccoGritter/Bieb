@@ -62,8 +62,8 @@
         </div>
 
         <div class="form-group">
-            <label for="uitgeleend_aan">Uitgeleend aan</label>
-            <input type="text" class="form-control" name="uitgeleend_aan" value="{{old('uitgeleend_aan')}}" placeholder = "optioneel" >
+            <label for="aantal_aanwezig">Uitgeleend aan</label>
+            <input type="text" class="form-control" name="aantal_aanwezig" value="{{old('aantal_aanwezig')}}" placeholder = "optioneel" >
         </div>
 
         <button type="submit" class="btn btn-primary mb-1">Voeg toe</button>

@@ -64,8 +64,8 @@
         </div>
 
         <div class="form-group">
-            <label for="uitgeleend_aan">Uitgeleend aan</label>
-            <input type="text" class="form-control" name="uitgeleend_aan" placeholder = "optioneel" value="{{ $book->uitgeleend_aan }}" >
+            <label for="aantal_aanwezig">Aantal aanwezig</label>
+            <input type="text" class="form-control" name="aantal_aanwezig" placeholder = "optioneel" value="{{ $book->aantal_aanwezig }}" >
         </div>
 
         <button type="submit" class="btn btn-primary mb-1">Wijzig</button><br>
