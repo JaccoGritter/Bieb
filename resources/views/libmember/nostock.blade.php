@@ -2,9 +2,10 @@
 
 @section('content')
 
-<h4>Boek geleend</h4>
+<h3>Niet op voorraad</h3>
 
-<p>Het boek {{ $book->titel }} van {{ $book->auteur }} is geleend.</p>
+<p> Helaas is {{ $book->titel }} van {{ $book->auteur }} momenteel niet aanwezig in de bibliotheek. </p>
+
 
 <div style="margin: 19px;">
     <a href="{{ route('members.show', session('loggedinUser') ) }}" class="btn btn-primary">Home</a>
