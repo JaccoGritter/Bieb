@@ -10,6 +10,7 @@
     <tr><td>Genre: </td><td>{{ $book->genre}} </td></tr>
     <tr><td>Aantal pagina's: </td><td>{{ $book->aantal_paginas}} </td></tr>
     <tr><td>ISBN nummer: </td><td>{{ $book->isbn}} </td></tr>
+    <tr><td>Aantal exemplaren aanwezig: </td><td>{{ $book->aantal_aanwezig }} </td></tr>
 </table>
 
 <div style="margin: 19px;">
