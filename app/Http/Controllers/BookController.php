@@ -14,14 +14,14 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function adminindex()
     {
 
         // $books = Book::all();
         $criterium = "auteur";
         $books = DB::table('books')->orderBy($criterium, 'asc')->get();
 
-        return view('libadmin.books', compact('books'));
+        return view('libadmin.adminindex', compact('books'));
     }
 
     
@@ -88,9 +88,9 @@ class BookController extends Controller
         return view('libadmin.show', compact('book'));
     }
 
-    public function membershow(Book $book)
+    public function showBookToMember(Book $book)
     {
-        return view('libmember.membershow', compact('book'));
+        return view('libmember.showbooktomember', compact('book'));
     }
 
     /**
@@ -163,6 +163,11 @@ class BookController extends Controller
     public function lendBook($id)
     {
         $book = Book::findOrFail($id);
+
+        if ($book->aantal_aanwezig <= 0) return view ('libmember/nostock'); 
+
+        $book->aantal_aanwezig -= 1;
+        $book->save();
 
         $lentbook = new Lentbook;
         $lentbook->bookId = $book->id;

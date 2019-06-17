@@ -26,7 +26,7 @@
         <h2>Welkom bij de bibliotheek</h1>
         <br>
         <p>Ga verder als:</p><br>
-        <p><a href="{{ route('books.index')}}">Bibliotheekmedewerker</a></p>
+        <p><a href="{{ route('books.adminindex')}}">Bibliotheekmedewerker</a></p>
         <p><a href="{{ route('members.memberLogin')}}">Abonnementshouder</a></p>
         <img src="{{ asset('pictures/boeken.jpg') }}">
     </div>
