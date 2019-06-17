@@ -21,7 +21,7 @@ class CreateBooksTable extends Migration
             $table->string('genre');
             $table->smallInteger('aantal_paginas');
             $table->string('isbn')->unique();
-            $table->string('uitgeleend_aan')->nullable();
+            $table->integer('aantal_aanwezig');
             $table->timestamps();
         });
     }

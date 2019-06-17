@@ -31,6 +31,8 @@ Route::get('/books/{book}/edit', 'BookController@edit')->name('books.edit');
 Route::patch('/books/{book}', 'BookController@update')->name('books.update');
 Route::delete('/books/{book}', 'BookController@destroy')->name('books.destroy');
 
+Route::get('/libmember/lend/{book}', 'BookController@lendBook')->name('books.lend');
+
 Route::resource('members', 'MembersController');
 Route::get('libmember/', 'MembersController@memberLogin')->name('members.memberLogin');
 Route::get('libmember/{book}', 'BookController@membershow')->name('books.membershow');

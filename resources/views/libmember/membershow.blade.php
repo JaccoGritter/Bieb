@@ -14,7 +14,7 @@
 
 <div style="margin: 19px;">
     <a href="{{ route('members.show', session('loggedinUser') ) }}" class="btn btn-primary">Home</a>
-    <a href="#" class="btn btn-secondary">Leen boek</a>
+    <a href="{{ route('books.lend', $book->id) }}" class="btn btn-secondary">Leen boek</a>
 </div>
 
 @endsection('content')
