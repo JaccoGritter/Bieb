@@ -157,14 +157,14 @@ class BookController extends Controller
             ->where('auteur', 'like', "%".$auteur."%")
             ->get();
 
-        return view('libmember/results', compact('books'));
+        return view('libmember/searchresults', compact('books'));
     }
 
     public function lendBook($id)
     {
         $book = Book::findOrFail($id);
 
-        if ($book->aantal_aanwezig <= 0) return view ('libmember/nostock'); 
+        if ($book->aantal_aanwezig <= 0) return view ('libmember/nostock', compact('book')); 
 
         $book->aantal_aanwezig -= 1;
         $book->save();
