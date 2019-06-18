@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Member;
 use App\Lentbook;
 
@@ -77,6 +78,19 @@ use App\Lentbook;
     {
         $members = Member::all();
         return view('libmember.login', compact('members'));
+    }
+
+
+    public function getLentBooks()
+    {
+        $lentBooks = DB::SELECT ('select
+            books.titel, books.auteur, lentbooks.lentFrom, members.id
+            FROM ((lentbooks
+            INNER JOIN books ON lentbooks.bookId = books.id)
+            INNER JOIN members ON lentbooks.memberID = members.id)'
+        );
+            
+        return view('libmember.lentbooks', compact('lentBooks'));
     }
 
      /** 

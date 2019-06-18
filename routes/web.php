@@ -36,6 +36,9 @@ Route::get('/libmember/lend/{book}', 'BookController@lendBook')->name('books.len
 Route::resource('members', 'MembersController');
 Route::get('libmember/', 'MembersController@memberLogin')->name('members.memberLogin');
 Route::get('libmember/showbooktomember/{book}', 'BookController@showBookToMember')->name('books.showbooktomember');
+
+Route::get('libmember/lentbooks', 'MembersController@getLentBooks')->name('libmember.lentbooks');
+
 Route::get('libmember/nostock', function(){
     return view ('nostock');
 });
