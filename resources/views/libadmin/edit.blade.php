@@ -28,7 +28,7 @@
 
         <div class="form-group">
             <label for="auteur">Auteur</label>
-            <input type="text" class="form-control" name="auteur" value="{{ $book->auteur }}"" required >
+            <input type="text" class="form-control" name="auteur" value="{{ $book->auteur }}" required >
         </div>
 
         <div class="form-group">
@@ -42,7 +42,7 @@
         </div>
 
         <div class="form-group">
-        <label for="taal">Genre</label>
+        <label for="genre">Genre</label>
             <select class="form-control" id="genre" name="genre">
                 <option value="Roman" <?php if ($book->genre == "Roman") echo 'selected'?> >Roman</option>
                 <option value="Science Fiction" <?php if ($book->genre == "Science Fiction") echo 'selected'?> >Science Fiction</option>
