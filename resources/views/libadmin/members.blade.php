@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h5><a href="{{ route('books.adminindex')}}">naar boeken</a></h5>
+<h5><a href="{{ route('books.viewallbooks')}}">naar boeken</a></h5>
 <h2>Overzicht leden</h2>
 <div style="margin: 19px;">
     <a href="{{ route('members.create')}}" class="btn btn-primary">Nieuw lid</a>

@@ -14,5 +14,5 @@
 Auteur&nbsp<input type="text" name="auteur">&nbsp<button type="submit" class="btn btn-primary">zoek</button>
 </form>
 
-<a href="{{ route ('libmember.lentbooks') }}">Bekijk boeken in mijn bezit</a>
+<a href="{{ route ('members.lentbooks') }}">Bekijk boeken in mijn bezit</a>
 @endsection

@@ -16,14 +16,23 @@ class BookController extends Controller
      */
     public function adminindex()
     {
+        
+        // $criterium = "auteur";
+        // $books = DB::table('books')->orderBy($criterium, 'asc')->get();
+
+        // return view('libadmin.adminindex', compact('books'));
+    }
+
+
+    public function viewAllBooks()
+    {
 
         // $books = Book::all();
         $criterium = "auteur";
         $books = DB::table('books')->orderBy($criterium, 'asc')->get();
 
-        return view('libadmin.adminindex', compact('books'));
+        return view('libadmin.viewallbooks', compact('books'));
     }
-
     
 
     /**
@@ -67,7 +76,7 @@ class BookController extends Controller
 
         $book->save();
 
-        return redirect('\books');
+        return redirect('/books/viewallbooks')->with('success', 'Boek aangemaakt!');
     }
 
     /**
@@ -132,7 +141,7 @@ class BookController extends Controller
 
         $book->save();
 
-        return redirect('/books')->with('success', 'Boek aangepast!');
+        return redirect('/books/viewallbooks')->with('success', 'Boek aangepast!');
     }
 
     /**

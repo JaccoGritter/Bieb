@@ -18,10 +18,14 @@ Route::get('/', function(){
 });
 
 Route::get('books/findbooks', 'BookController@findBooks')->name('books.findBooks');
+Route::get('books/viewallbooks', 'BookController@viewAllBooks')->name('books.viewallbooks');
 
 // Route::resource('books', 'BookController');
 
-Route::get('/books', 'BookController@adminindex')->name('books.adminindex');
+Route::get('/books', function(){
+    return view('libadmin/adminindex');
+});
+
 Route::get('books/create', 'BookController@create')->name('books.create');
 
 Route::get('/books/{book}', 'BookController@show')->name('books.show');
@@ -37,7 +41,7 @@ Route::resource('members', 'MembersController');
 Route::get('libmember/', 'MembersController@memberLogin')->name('members.memberLogin');
 Route::get('libmember/showbooktomember/{book}', 'BookController@showBookToMember')->name('books.showbooktomember');
 
-Route::get('libmember/lentbooks', 'MembersController@getLentBooks')->name('libmember.lentbooks');
+Route::get('libmember/lentbooks', 'MembersController@getLentBooks')->name('members.lentbooks');
 
 Route::get('libmember/nostock', function(){
     return view ('nostock');
