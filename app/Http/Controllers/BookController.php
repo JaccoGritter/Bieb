@@ -161,9 +161,13 @@ class BookController extends Controller
     public function findBooks(Request $request)
     {
         $auteur = $request->input('auteur');
+        $titel = $request->input('titel');
+        $genre = $request->input('genre');
 
         $books = DB::table('books')
             ->where('auteur', 'like', "%".$auteur."%")
+            ->where('titel', 'like', "%".$titel."%")
+            ->where('genre', 'like', "%".$genre."%")
             ->get();
 
         return view('libmember/searchresults', compact('books'));
