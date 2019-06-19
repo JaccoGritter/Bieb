@@ -11,6 +11,7 @@ class Book extends Model
     public function members()
     {
         return $this->belongsToMany('App\Member', 'books_members');
+        
     }
 
 
