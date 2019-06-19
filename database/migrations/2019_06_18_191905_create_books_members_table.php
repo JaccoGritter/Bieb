@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLentbooksTable extends Migration
+class CreateBooksMembersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateLentbooksTable extends Migration
      */
     public function up()
     {
-        Schema::create('lentbooks', function (Blueprint $table) {
+        Schema::create('books_members', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('book_id');
             $table->bigInteger('member_id');
@@ -29,6 +29,6 @@ class CreateLentbooksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lentbooks');
+        Schema::dropIfExists('books_members');
     }
 }
