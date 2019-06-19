@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Member;
-use App\Lentbook;
+// use App\Book;
+
 
 
     class MembersController extends Controller
@@ -83,13 +84,9 @@ use App\Lentbook;
 
     public function getLentBooks()
     {
-        $lentBooks = DB::SELECT ('select
-            books.titel, books.auteur, lentbooks.lentFrom, members.id
-            FROM ((lentbooks
-            INNER JOIN books ON lentbooks.bookId = books.id)
-            INNER JOIN members ON lentbooks.memberID = members.id)'
-        );
-            
+        $member = Member::first();
+        $lentBooks = $member->books;
+        $lentBooks;
         return view('libmember.lentbooks', compact('lentBooks'));
     }
 

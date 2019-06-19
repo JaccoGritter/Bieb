@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Lentbook extends Model
+class Books_member extends Model
 {
-   //
+    //
 }

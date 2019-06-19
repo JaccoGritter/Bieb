@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
-use App\Lentbook;
+use App\Books_member;
 use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
@@ -182,9 +182,9 @@ class BookController extends Controller
         $book->aantal_aanwezig -= 1;
         $book->save();
 
-        $lentbook = new Lentbook;
-        $lentbook->bookId = $book->id;
-        $lentbook->memberid = session("loggedinUser");
+        $lentbook = new Books_member;
+        $lentbook->book_id = $book->id;
+        $lentbook->member_id = session("loggedinUser");
         $lentbook->lentfrom = now();
         $lentbook->save();
 
