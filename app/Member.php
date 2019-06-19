@@ -11,10 +11,9 @@ class Member extends Model
 
     public function books()
     {
-        return $this->belongsToMany('App\Book', 'books_members');
+        return $this->belongsToMany('App\Book', 'books_members')
+        ->withPivot('lentFrom');
     }
-
-
 
 
     protected $fillable = [

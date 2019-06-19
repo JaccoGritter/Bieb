@@ -8,7 +8,7 @@
 
 @foreach($lentBooks as $lentBook)
 
-    <p>{{ $lentBook->titel }} van {{ $lentBook->auteur }}</p>
+    <p>{{ $lentBook->titel }} van {{ $lentBook->auteur }} geleend sinds {{ $lentBook->pivot->lentFrom }} </p>
  
 @endforeach
 
