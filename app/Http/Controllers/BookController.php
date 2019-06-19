@@ -153,7 +153,7 @@ class BookController extends Controller
         $book = Book::findOrFail($id);
         $book->delete();
 
-        return redirect('/books')->with('success', 'Boek verwijderd!');
+        return redirect('/books/viewallbooks')->with('success', 'Boek verwijderd!');
     }
 
     public function findBooks(Request $request)

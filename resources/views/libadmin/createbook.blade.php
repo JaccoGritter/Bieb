@@ -62,7 +62,7 @@
         </div>
 
         <div class="form-group">
-            <label for="aantal_aanwezig">aantal_aanwezig</label>
+            <label for="aantal_aanwezig">Aantal aanwezig</label>
             <input type="text" class="form-control" name="aantal_aanwezig" value="{{old('aantal_aanwezig')}}" required >
         </div>
 
