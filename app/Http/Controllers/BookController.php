@@ -27,9 +27,8 @@ class BookController extends Controller
     public function viewAllBooks()
     {
 
-        // $books = Book::all();
         $criterium = "auteur";
-        $books = DB::table('books')->orderBy($criterium, 'asc')->get();
+        $books = BOOK::orderBy($criterium)->get();
 
         return view('libadmin.viewallbooks', compact('books'));
     }
@@ -136,7 +135,6 @@ class BookController extends Controller
         $book->taal = $request->get('taal');
         $book->genre = $request->get('genre');
         $book->aantal_paginas = $request->get('aantal_paginas');
-        //$book->isbn = $request->get('isbn');
         $book->aantal_aanwezig = $request->get('aantal_aanwezig');
 
         $book->save();
@@ -164,11 +162,7 @@ class BookController extends Controller
         $titel = $request->input('titel');
         $genre = $request->input('genre');
 
-        $books = DB::table('books')
-            ->where('auteur', 'like', "%".$auteur."%")
-            ->where('titel', 'like', "%".$titel."%")
-            ->where('genre', 'like', "%".$genre."%")
-            ->get();
+        $books = Book::where('auteur', 'like', "%".$auteur."%")->where('titel', 'like', "%".$titel."%")->where('genre', 'like', "%".$genre."%")->get();
 
         return view('libmember/searchresults', compact('books'));
     }

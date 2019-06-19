@@ -84,7 +84,8 @@ use App\Member;
 
     public function getLentBooks()
     {
-        $member = Member::first();
+        $id = session("loggedinUser");
+        $member = Member::find($id);
         $lentBooks = $member->books;
         $lentBooks;
         return view('libmember.lentbooks', compact('lentBooks'));
