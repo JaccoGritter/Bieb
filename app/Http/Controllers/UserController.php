@@ -3,19 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Member;
-// use App\Book;
+use App\User;
+use Carbon\Traits\Timestamp;
 
-
-
-    class MembersController extends Controller
+class UserController extends Controller
+{
+    public function index()
     {
-        public function index() {
-            $members = Member::all();
-            return view('libadmin.members', compact('members'));
-        }
-    
+        $users = User::all();
+        return view('libadmin.users', compact('users'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -24,9 +22,8 @@ use App\Member;
      */
     public function create()
     {
-        
-         return view('libadmin.createmember');
-    
+
+        return view('libadmin.createuser');
     }
 
     /**
@@ -38,22 +35,25 @@ use App\Member;
     public function store(Request $request)
     {
         $request->validate([
-            'voornaam'=>'required',
-            'achternaam'=>'required',
-            'woonplaats'=>'required',
-            'abo_geldig_tot'=>['required', 'date'],
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'subscription_valid_until' => ['required', 'date'],
         ]);
-        
-        $member = new Member;
 
-        $member->voornaam = $request->voornaam;
-        $member->achternaam = $request->achternaam;
-        $member->woonplaats = $request->woonplaats;
-        $member->abo_geldig_tot = $request->abo_geldig_tot;
+        $user = new User;
 
-        $member->save();
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->email = $request->email;
+        $user->email_verified_at = now();
+        $user->password = $request->password;
+        $user->subscription_valid_until = $request->subscription_valid_until;
 
-        return redirect('\members');
+        $user->save();
+
+        return redirect('\users');
     }
 
     /**
@@ -62,44 +62,44 @@ use App\Member;
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Member $member)
+    public function show(user $user)
     {
-        session(['loggedinUser' => $member->id]);
-        return view('libmember.memberIndex', compact('member'));
-
+        session(['loggedinUser' => $user->id]);
+        return view('libmember.userIndex', compact('user'));
     }
 
     /** 
-     * Display all members to a member
+     * Display all users to a user
      *
      * @return \Illuminate\Http\Response
      */
 
-    public function memberLogin()
+    public function userLogin()
     {
-        $members = Member::all();
-        return view('libmember.login', compact('members'));
+        $users = user::all();
+        return view('libmember.login', compact('users'));
     }
 
 
     public function getLentBooks()
     {
         $id = session("loggedinUser");
-        $member = Member::find($id);
-        $lentBooks = $member->books;
+        $user = User::find($id);
+        $lentBooks = $user->books;
+        
         return view('libmember.lentbooks', compact('lentBooks'));
     }
 
-     /** 
-     * Display a member
+    /** 
+     * Display a user
      *
      * @return \Illuminate\Http\Response
      */
 
-    // public function memberIndex(Member $member)
+    // public function userIndex(user $user)
     // {
-       
-    //     return view('libmember.memberIndex', compact('member'));
+
+    //     return view('libuser.userIndex', compact('user'));
     // }
 
     /**

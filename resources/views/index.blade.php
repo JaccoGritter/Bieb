@@ -27,7 +27,7 @@
         <br>
         <p>Ga verder als:</p><br>
         <p><a href="/books">Bibliotheekmedewerker</a></p>
-        <p><a href="{{ route('members.memberLogin')}}">Abonnementshouder</a></p>
+        <p><a href="{{ route('users.userLogin')}}">Abonnementshouder</a></p>
         <img src="{{ asset('pictures/boeken.jpg') }}">
     </div>
 

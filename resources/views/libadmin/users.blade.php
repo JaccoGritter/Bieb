@@ -5,7 +5,7 @@
 <h5><a href="{{ route('books.viewallbooks')}}">naar boeken</a></h5>
 <h2>Overzicht leden</h2>
 <div style="margin: 19px;">
-    <a href="{{ route('members.create')}}" class="btn btn-primary">Nieuw lid</a>
+    <a href="{{ route('users.create')}}" class="btn btn-primary">Nieuw lid</a>
 </div>
 
 <table class="table">
@@ -18,12 +18,12 @@
         </tr>
     </tablehead>
     <tablebody>
-    @foreach ($members as $member)
+    @foreach ($users as $user)
         <tr>
-            <td>{{ $member->id}}</td>
-            <td>{{ $member->voornaam ." " . $member->achternaam }}</td>
-            <td>{{ $member->woonplaats }}</td>
-            <td>{{ $member->abo_geldig_tot }}</td>
+            <td>{{ $user->id}}</td>
+            <td>{{ $user->first_name ." " . $user->last_name }}</td>
+            <td>{{ $user->email }}</td>
+            <td>{{ $user->subscription_valid_until }}</td>
         </tr>
     @endforeach
     </tablebody>

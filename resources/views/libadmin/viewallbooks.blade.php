@@ -8,7 +8,7 @@
     </div>
 @endif
 
-<h5><a href="{{ route('members.index')}}">naar leden</a></h5>
+<h5><a href="{{ route('users.index') }}">naar leden</a></h5>
 <h2>Overzicht boeken</h2> 
 
 

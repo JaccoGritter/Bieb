@@ -11,17 +11,15 @@
         <tr>
             <th>lidnr</th>
             <th>Naam</th>
-            <th>Woonplaats</th>
             <th>Lid tot</th>
         </tr>
     </tablehead>
     <tablebody>
-    @foreach ($members as $member)
+    @foreach ($users as $user)
         <tr>
-            <td>{{ $member->id}}</td>
-            <td><a href="{{ route ('members.show', $member->id) }}"> {{ $member->voornaam ." " . $member->achternaam }} </a></td>
-            <td>{{ $member->woonplaats }}</td>
-            <td>{{ $member->abo_geldig_tot }}</td>
+            <td>{{ $user->id}}</td>
+            <td><a href="{{ route ('users.show', $user->id) }}"> {{ $user->first_name ." " . $user->last_name }} </a></td>
+            <td>{{ $user->subscription_valid_until }}</td>
         </tr>
     @endforeach
     </tablebody>

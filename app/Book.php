@@ -8,9 +8,10 @@ use App\Member;
 class Book extends Model
 {
 
-    public function members()
+    public function users()
     {
-        return $this->belongsToMany('App\Member', 'books_members');
+        return $this->belongsToMany('App\User', 'books_users')
+        ->withPivot('lent_from');
         
     }
 

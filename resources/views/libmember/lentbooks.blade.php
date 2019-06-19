@@ -8,13 +8,13 @@
 
 @foreach($lentBooks as $lentBook)
 
-    <p>{{ $lentBook->titel }} van {{ $lentBook->auteur }} geleend sinds {{ $lentBook->pivot->lentFrom }} </p>
+    <p>{{ $lentBook->titel }} van {{ $lentBook->auteur }} geleend sinds {{ $lentBook->pivot->lent_from }} </p>
  
 @endforeach
 
 
 <div style="margin: 19px;">
-    <a href="{{ route('members.show', session('loggedinUser') ) }}" class="btn btn-primary">Home</a>
+    <a href="{{ route('users.show', session('loggedinUser') ) }}" class="btn btn-primary">Home</a>
 </div>
 
 @endsection
