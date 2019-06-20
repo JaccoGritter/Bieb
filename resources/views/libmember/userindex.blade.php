@@ -3,7 +3,21 @@
 @section('content')
 
 <p>{{ $user->first_name}}&nbsp;{{ $user->last_name }} is ingelogd</p>
-<a href="/login">Logout</a>
+<!-- <a href="{{ route('logout') }}">Logout</a> -->
+
+
+<a href="{{ url('/logout') }}" 
+        onclick="event.preventDefault();
+        document.getElementById('logout-form').submit();">
+        Logout
+</a>
+    <form id="logout-form" 
+        action="{{ url('/logout') }}" 
+    method="POST" 
+    style="display: none;">
+                {{ csrf_field() }}
+    </form>
+
 
 <h1>Welkom {{ $user->first_name }}</h1>
 

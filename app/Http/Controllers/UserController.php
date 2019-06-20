@@ -88,12 +88,6 @@ class UserController extends Controller
         return view('libmember.lentbooks', compact('lentBooks'));
     }
 
-    public function logout()
-    {
-        auth()->logout();
-        //return view('login');
-    }
-
     /** 
      * Display a user
      *

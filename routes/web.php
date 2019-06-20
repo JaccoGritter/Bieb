@@ -41,7 +41,6 @@ Route::post('/users', 'UserController@store')->name('users.store');
 Route::get('/users/{user}/edit', 'UserController@edit')->name('users.edit');
 Route::patch('/users/{user}', 'UserController@update')->name('users.update');
 Route::delete('/users/{user}', 'UserController@destroy')->name('users.destroy');
-Route::get('/users/logout', 'UserController@logout')->name('users.logout');
 
 //Route::get('libmember', 'UserController@userLogin')->name('users.userLogin');
 
