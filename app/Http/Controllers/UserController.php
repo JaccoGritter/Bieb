@@ -64,7 +64,6 @@ class UserController extends Controller
      */
     public function show(user $user)
     {
-        session(['loggedinUser' => $user->id]);
         return view('libmember.userIndex', compact('user'));
     }
 
@@ -83,11 +82,16 @@ class UserController extends Controller
 
     public function getLentBooks()
     {
-        $id = session("loggedinUser");
+        $id = auth()->user()->id;
         $user = User::find($id);
         $lentBooks = $user->books;
-
         return view('libmember.lentbooks', compact('lentBooks'));
+    }
+
+    public function logout()
+    {
+        auth()->logout();
+        //return view('login');
     }
 
     /** 

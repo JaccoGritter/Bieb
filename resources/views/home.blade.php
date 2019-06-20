@@ -1,7 +1,6 @@
-@extends('layouts\libmemberLayout')
+@extends('layouts.app')
 
 @section('content')
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -16,10 +15,12 @@
                     @endif
 
                     You are logged in!
+
+                    <a href= "{{route ('users.show', auth()->user() )}}">Ga verder</a>
+                  
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection

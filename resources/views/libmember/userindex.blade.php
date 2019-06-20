@@ -3,7 +3,7 @@
 @section('content')
 
 <p>{{ $user->first_name}}&nbsp;{{ $user->last_name }} is ingelogd</p>
-<a href="{{ route ('users.userLogin') }}">Log uit</a>
+<a href="/login">Logout</a>
 
 <h1>Welkom {{ $user->first_name }}</h1>
 

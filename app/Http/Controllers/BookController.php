@@ -178,7 +178,7 @@ class BookController extends Controller
 
         $lentbook = new Books_user;
         $lentbook->book_id = $book->id;
-        $lentbook->user_id = session("loggedinUser");
+        $lentbook->user_id = auth()->user()->id;
         $lentbook->lent_from = now();
         $lentbook->save();
 
