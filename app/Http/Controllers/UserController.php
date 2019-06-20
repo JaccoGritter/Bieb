@@ -37,8 +37,8 @@ class UserController extends Controller
         $request->validate([
             'first_name' => 'required',
             'last_name' => 'required',
-            'email' => 'required',
-            'password' => 'required',
+            'email' => ['required', 'unique:users,email'],
+            'password' => ['required', 'unique:users,password'],
             'subscription_valid_until' => ['required', 'date'],
         ]);
 
@@ -86,7 +86,7 @@ class UserController extends Controller
         $id = session("loggedinUser");
         $user = User::find($id);
         $lentBooks = $user->books;
-        
+
         return view('libmember.lentbooks', compact('lentBooks'));
     }
 

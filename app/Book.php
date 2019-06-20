@@ -10,7 +10,7 @@ class Book extends Model
 
     public function users()
     {
-        return $this->belongsToMany('App\User', 'books_users')
+        return $this->belongsToMany(User::class, 'books_users')
         ->withPivot('lent_from');
         
     }
