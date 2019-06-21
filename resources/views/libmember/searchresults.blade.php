@@ -12,8 +12,8 @@
 
         <tablehead>
             <tr>
-                <th>Auteur</th>
-                <th>Titel</th>
+                <th><a href="{{ route('books.findBooks', ['criterium' => 'auteur']) }}">Auteur</a></th>
+                <th><a href="{{ route('books.findBooks', ['criterium' => 'titel']) }}">Titel</a></th>
                 <th>Taal</th>
                 <th>Genre</th>
                 <th>Pagina's</th>

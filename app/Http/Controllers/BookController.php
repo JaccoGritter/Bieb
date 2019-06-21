@@ -162,8 +162,10 @@ class BookController extends Controller
         $auteur = $request->input('auteur');
         $titel = $request->input('titel');
         $genre = $request->input('genre');
+        
+        $criterium = $request->input('criterium', 'auteur');
 
-        $books = Book::where('auteur', 'like', "%".$auteur."%")->where('titel', 'like', "%".$titel."%")->where('genre', 'like', "%".$genre."%")->get();
+        $books = Book::where('auteur', 'like', "%".$auteur."%")->where('titel', 'like', "%".$titel."%")->where('genre', 'like', "%".$genre."%")->orderBy($criterium)->get();
 
         return view('libmember/searchresults', compact('books'));
     }
