@@ -15,6 +15,8 @@ Route::get('/', function(){
     return view('index');
 });
 
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('books/findbooks', 'BookController@findBooks')->name('books.findBooks');
 Route::get('books/viewallbooks', 'BookController@viewAllBooks')->name('books.viewallbooks');
 
@@ -53,6 +55,8 @@ Route::get('/libmember/lend/{book}', 'BookController@lendBook')->name('books.len
 Route::get('libmember/nostock', function(){
     return view ('nostock');
 });
-Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Auth::routes();
+//Route::get('/logout', 'LogoutController@logout')->name('logout');
+
+
