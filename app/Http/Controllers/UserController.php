@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
 use Carbon\Traits\Timestamp;
 
 class UserController extends Controller
@@ -82,7 +83,7 @@ class UserController extends Controller
 
     public function getLentBooks()
     {
-        $id = auth()->user()->id;
+        $id = Auth::id();
         $user = User::find($id);
         $lentBooks = $user->books;
         return view('libmember.lentbooks', compact('lentBooks'));

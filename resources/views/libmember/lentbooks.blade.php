@@ -24,6 +24,7 @@
             <td>{{ $book->auteur }}</td>
             <td>{{ $book->titel }}</td>
             <td>{{ $book->pivot->lent_from }}</td>
+            <td><a href="{{route('books.return', $book->id) }}">inleveren</a></td>
         </tr>
     </tablebody>
 

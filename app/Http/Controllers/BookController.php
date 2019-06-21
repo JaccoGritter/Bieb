@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Book;
 use App\Books_user;
+use Auth;
 use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
@@ -173,16 +174,29 @@ class BookController extends Controller
 
         if ($book->aantal_aanwezig <= 0) return view ('libmember/nostock', compact('book')); 
 
-        $book->aantal_aanwezig -= 1;
+        $book->decrement('aantal_aanwezig');
         $book->save();
 
         $lentbook = new Books_user;
         $lentbook->book_id = $book->id;
-        $lentbook->user_id = auth()->user()->id;
+        $lentbook->user_id = Auth::id();
         $lentbook->lent_from = now();
         $lentbook->save();
 
         return view('libmember/lend', compact('book'));
+    }
+
+    public function returnBook($id)
+    {
+        $book = Book::findOrFail($id);
+        
+        $book->increment('aantal_aanwezig');
+        
+        $returnedbook = Books_user::where('book_id', $id)->get()->first();
+
+        $returnedbook->delete();
+
+        return view('libmember/return', compact('book'));
     }
 
 }

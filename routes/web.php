@@ -51,6 +51,7 @@ Route::get('libmember/showbooktomember/{book}', 'BookController@showBookToMember
 Route::get('libmember/lentbooks', 'UserController@getLentBooks')->name('users.lentbooks');
 
 Route::get('/libmember/lend/{book}', 'BookController@lendBook')->name('books.lend');
+Route::get('/libmember/return/{book}', 'BookController@returnBook')->name('books.return');
 
 Route::get('libmember/nostock', function(){
     return view ('nostock');
