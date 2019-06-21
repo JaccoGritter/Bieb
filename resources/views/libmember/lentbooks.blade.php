@@ -7,11 +7,28 @@
 
     <h3>Boeken die je momenteel geleend hebt:</h3>
 
-    @foreach($lentBooks as $lentBook)
+    <table class="table">
 
-        <p>{{ $lentBook->titel }} van {{ $lentBook->auteur }} geleend sinds {{ $lentBook->pivot->lent_from }} </p>
-    
+    <tablehead>
+        <tr>
+            <th>Auteur</th>
+            <th>Titel</th>
+            <th>Geleend sinds</th>
+        </tr>
+    </tablehead>
+
+    <tablebody>
+    @foreach($lentBooks as $book)
+        
+        <tr>
+            <td>{{ $book->auteur }}</td>
+            <td>{{ $book->titel }}</td>
+            <td>{{ $book->pivot->lent_from }}</td>
+        </tr>
+    </tablebody>
+
     @endforeach
+    </table>
 
 @else
 
