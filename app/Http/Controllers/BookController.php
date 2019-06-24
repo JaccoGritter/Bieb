@@ -167,7 +167,7 @@ class BookController extends Controller
 
         $books = Book::where('auteur', 'like', "%".$auteur."%")->where('titel', 'like', "%".$titel."%")->where('genre', 'like', "%".$genre."%")->orderBy($criterium)->get();
 
-        return view('libmember/searchresults', compact('books'));
+        return view('libmember/searchresults', compact('books', 'auteur', 'titel', 'genre'));
     }
 
     public function lendBook($id)
