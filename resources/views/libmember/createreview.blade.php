@@ -16,7 +16,7 @@
         <input type="hidden" id="bookId" name="book_id" value="{{$book->id}}">
         <div class="form-group">
             <label for="screen_name">Naam die bij de review getoond wordt:</label>
-            <input type="text" class="form-control" name="screen_name" value="{{old('screen_name')}}" required>
+            <input type="text" class="form-control" name="screen_name" value="{{old('screen_name')}}">
         </div>
 
         <div class="form-group">

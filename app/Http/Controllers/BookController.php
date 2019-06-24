@@ -215,7 +215,12 @@ class BookController extends Controller
        
         $review = new Review;
         $review->book_id = $request->get('book_id');
-        $review->screen_name = $request->get('screen_name');
+        if ($request->screen_name == "") {
+            $review->screen_name = 'Anoniem';
+            } else {
+                $review->screen_name = $request->get('screen_name');
+            }
+        
         $review->stars = $request->get('stars');
         $review->comments = $request->get('comments');
 
