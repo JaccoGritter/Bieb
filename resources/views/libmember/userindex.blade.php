@@ -29,12 +29,12 @@
     <label for="genre">Genre</label>
         <select class="form-control" id="genre" name="genre">
             <option value="">Alle</option>
-            <option value="Roman">Roman</option>
-            <option value="Science Fiction">Science Fiction</option>
-            <option value="Thriller">Thriller</option>
-            <option value="Humor">Humor</option>
-            <option value="Fantasy">Fantasy</option>
-            <option value="Biografie">Biografie</option>
+            <option value="roman">Roman</option>
+            <option value="science fiction">Science Fiction</option>
+            <option value="thriller">Thriller</option>
+            <option value="humor">Humor</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="biografie">Biografie</option>
         </select>
     </div>
 

@@ -44,12 +44,12 @@
         <div class="form-group">
         <label for="genre">Genre</label>
             <select class="form-control" id="genre" name="genre">
-                <option value="Roman" <?php if ($book->genre == "Roman") echo 'selected'?> >Roman</option>
-                <option value="Science Fiction" <?php if ($book->genre == "Science Fiction") echo 'selected'?> >Science Fiction</option>
-                <option value="Thriller" <?php if ($book->genre == "Thriller") echo 'selected'?> >Thriller</option>
-                <option value="Humor" <?php if ($book->genre == "Humor") echo 'selected'?>>Humor</option>
-                <option value="Fantasy" <?php if ($book->genre == "Fantasy") echo 'selected'?>>Fantasy</option>
-                <option value="Biografie" <?php if ($book->genre == "Biografie") echo 'selected'?>>Biografie</option>
+                <option value="Roman" <?php if ($book->genre == "roman") echo 'selected'?> >Roman</option>
+                <option value="Science Fiction" <?php if ($book->genre == "science fiction") echo 'selected'?> >Science Fiction</option>
+                <option value="Thriller" <?php if ($book->genre == "thriller") echo 'selected'?> >Thriller</option>
+                <option value="Humor" <?php if ($book->genre == "humor") echo 'selected'?>>Humor</option>
+                <option value="Fantasy" <?php if ($book->genre == "fantasy") echo 'selected'?>>Fantasy</option>
+                <option value="Biografie" <?php if ($book->genre == "biografie") echo 'selected'?>>Biografie</option>
             </select>
         </div>
 
