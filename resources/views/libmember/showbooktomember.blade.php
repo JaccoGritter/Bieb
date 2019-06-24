@@ -32,8 +32,8 @@
         echo('<i class="far fa-star"></i>');
         }
     ?>
-    </p>
-    <p>{{ $review->comments}}</p>
+</p>
+<p>{{ $review->comments}}</p>
 <p>----------------------------</p>
 @endforeach
 

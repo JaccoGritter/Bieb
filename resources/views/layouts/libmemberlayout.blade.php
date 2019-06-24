@@ -26,7 +26,7 @@
         </nav>
     </div>
     <div class="container">
-        <h5>Bibliotheek lid</h5>
+        <h5><i class="fas fa-book-reader fa-2x"></i>&nbsp;Bibliotheek lid</h5>
         @yield('content')
     </div>
 </body>
