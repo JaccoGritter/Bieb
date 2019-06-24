@@ -8,7 +8,7 @@
 
 @else
 
-    <table class="table table-hover">
+    <table class="table table-hover table-info">
 
         <tablehead>
             <tr>

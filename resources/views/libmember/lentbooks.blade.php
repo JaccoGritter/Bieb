@@ -7,7 +7,7 @@
 
     <h3>Boeken die je momenteel geleend hebt:</h3>
 
-    <table class="table">
+    <table class="table table-info">
 
     <tablehead>
         <tr>

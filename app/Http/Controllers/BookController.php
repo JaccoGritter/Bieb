@@ -212,6 +212,7 @@ class BookController extends Controller
     public function storeReview(Request $request)
     {
         $book = Book::findOrFail($request->get('book_id'));
+       
         $review = new Review;
         $review->book_id = $request->get('book_id');
         $review->screen_name = $request->get('screen_name');
