@@ -57,6 +57,10 @@ Route::get('libmember/nostock', function(){
     return view ('nostock');
 });
 
+Route::get('libmember/createreview/{book}', 'BookController@createReview')->name('books.createreview');
+Route::post('/reviews', 'BookController@storeReview')->name('books.storereview');
+
+
 Auth::routes();
 //Route::get('/logout', 'LogoutController@logout')->name('logout');
 

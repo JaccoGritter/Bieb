@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Member;
+
 
 class Book extends Model
 {
@@ -13,6 +13,11 @@ class Book extends Model
         return $this->belongsToMany(User::class, 'books_users')
         ->withPivot('lent_from');
         
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 
 

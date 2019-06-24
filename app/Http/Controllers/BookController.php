@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
+use App\Review;
 use App\Books_user;
 use Auth;
 use Illuminate\Support\Facades\DB;
@@ -200,5 +201,27 @@ class BookController extends Controller
 
         return view('libmember/return', compact('book'));
     }
+
+    public function createReview($id)
+    {
+        $book = Book::findOrFail($id);
+       
+        return view('libmember/createreview', compact('book'));
+    }
+
+    public function storeReview(Request $request)
+    {
+        $book = Book::findOrFail($request->get('book_id'));
+        $review = new Review;
+        $review->book_id = $request->get('book_id');
+        $review->screen_name = $request->get('screen_name');
+        $review->stars = $request->get('stars');
+        $review->comments = $request->get('comments');
+
+        $review->save();
+
+        return view ('libmember/reviewadded', compact('book'));
+    }
+
 
 }

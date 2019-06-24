@@ -25,6 +25,7 @@
             <td>{{ $book->titel }}</td>
             <td>{{ $book->pivot->lent_from }}</td>
             <td><a href="{{route('books.return', $book->id) }}">inleveren</a></td>
+            <td><a href="{{route('books.createreview', $book->id) }}">review schrijven</a></td>
         </tr>
     </tablebody>
 

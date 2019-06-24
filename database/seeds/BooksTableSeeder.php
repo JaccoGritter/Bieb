@@ -23,7 +23,7 @@ class BooksTableSeeder extends Seeder
             ],
             [
             'titel' => 'The Hobbit',
-            'auteur' => 'Tolkien',
+            'auteur' => 'J.R.R. Tolkien',
             'taal' => 'en',
             'genre' => 'fantasy',
             'aantal_paginas' => rand(100,600),
