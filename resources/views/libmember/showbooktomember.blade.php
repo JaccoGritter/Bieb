@@ -24,9 +24,14 @@
 
 @foreach ($book->reviews as $review)
 <p>{{ $review->screen_name }} gaf het boek 
-    <?php for($i=0; $i<$review->stars; $i++) {
-        echo('*');
-    } ?>
+    <?php 
+        for($i=0; $i<$review->stars; $i++) {
+        echo('<i class="fas fa-star"></i>');
+        }
+        for($i=$review->stars; $i<5; $i++) {
+        echo('<i class="far fa-star"></i>');
+        }
+    ?>
     </p>
     <p>{{ $review->comments}}</p>
 <p>----------------------------</p>
