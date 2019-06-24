@@ -115,16 +115,106 @@ class BooksTableSeeder extends Seeder
             'titel' => 'Brief aan de Buurnman',
             'auteur' => 'Ellen de Jong',
             'taal' => 'nl',
-            'genre' => 'thrillerr',
+            'genre' => 'thriller',
             'aantal_paginas' => rand(100,600),
             'isbn' => rand(1000000000000,9999999999999),
             'aantal_aanwezig' => rand(0,5)
             ],
             [
             'titel' => 'The Lord of the Rings',
-            'auteur' => 'Tolkien',
+            'auteur' => 'J.R.R. Tolkien',
             'taal' => 'en',
             'genre' => 'fantasy',
+            'aantal_paginas' => rand(100,600),
+            'isbn' => rand(1000000000000,9999999999999),
+            'aantal_aanwezig' => rand(0,5)
+            ],
+            [
+            'titel' => 'Rinkeldekink',
+            'auteur' => 'Martine Bijl',
+            'taal' => 'nl',
+            'genre' => 'biografie',
+            'aantal_paginas' => rand(100,600),
+            'isbn' => rand(1000000000000,9999999999999),
+            'aantal_aanwezig' => rand(0,5)
+            ],
+            [
+            'titel' => 'Summerproof met Sonja',
+            'auteur' => 'Sonja Bakker',
+            'taal' => 'nl',
+            'genre' => 'roman',
+            'aantal_paginas' => rand(100,600),
+            'isbn' => rand(1000000000000,9999999999999),
+            'aantal_aanwezig' => rand(0,5)
+            ],
+            [
+            'titel' => 'Lekker Fred',
+            'auteur' => 'Freddy Tratlehner',
+            'taal' => 'nl',
+            'genre' => 'biografie',
+            'aantal_paginas' => rand(100,600),
+            'isbn' => rand(1000000000000,9999999999999),
+            'aantal_aanwezig' => rand(0,5)
+            ],
+            [
+            'titel' => 'Laatste Weduwe',
+            'auteur' => 'Karen Slaughter',
+            'taal' => 'en',
+            'genre' => 'thriller',
+            'aantal_paginas' => rand(100,600),
+            'isbn' => rand(1000000000000,9999999999999),
+            'aantal_aanwezig' => rand(0,5)
+            ],
+            [
+            'titel' => 'Het Strandhuis',
+            'auteur' => 'Suzanne Vermeer',
+            'taal' => 'nl',
+            'genre' => 'thriller',
+            'aantal_paginas' => rand(100,600),
+            'isbn' => rand(1000000000000,9999999999999),
+            'aantal_aanwezig' => rand(0,5)
+            ],
+            [
+            'titel' => 'Huis vol Leugens',
+            'auteur' => 'Nicci French',
+            'taal' => 'nl',
+            'genre' => 'thriller',
+            'aantal_paginas' => rand(100,600),
+            'isbn' => rand(1000000000000,9999999999999),
+            'aantal_aanwezig' => rand(0,5)
+            ],
+            [
+            'titel' => 'House of Lies',
+            'auteur' => 'Nicci French',
+            'taal' => 'en',
+            'genre' => 'thriller',
+            'aantal_paginas' => rand(100,600),
+            'isbn' => rand(1000000000000,9999999999999),
+            'aantal_aanwezig' => rand(0,5)
+            ],
+            [
+            'titel' => 'Die Kinder der Rothschildallee',
+            'auteur' => 'Stefanie Zweig',
+            'taal' => 'du',
+            'genre' => 'roman',
+            'aantal_paginas' => rand(100,600),
+            'isbn' => rand(1000000000000,9999999999999),
+            'aantal_aanwezig' => rand(0,5)
+            ],
+            [
+            'titel' => 'Halbschatten',
+            'auteur' => 'Uwe Timm',
+            'taal' => 'du',
+            'genre' => 'roman',
+            'aantal_paginas' => rand(100,600),
+            'isbn' => rand(1000000000000,9999999999999),
+            'aantal_aanwezig' => rand(0,5)
+            ],
+            [
+            'titel' => 'Het Italiaanse Meisje',
+            'auteur' => 'Lucinda Riley',
+            'taal' => 'nl',
+            'genre' => 'thriller',
             'aantal_paginas' => rand(100,600),
             'isbn' => rand(1000000000000,9999999999999),
             'aantal_aanwezig' => rand(0,5)
