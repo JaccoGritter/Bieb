@@ -33,7 +33,7 @@ Route::get('/books/{book}/edit', 'BookController@edit')->name('books.edit');
 Route::patch('/books/{book}', 'BookController@update')->name('books.update');
 Route::delete('/books/{book}', 'BookController@destroy')->name('books.destroy');
 
-Route::get('/users', 'UserController@index')->name('users.index');
+Route::get('/users', 'UserController@index')->name('users.index')->middleware('auth');
 
 Route::get('users/create', 'UserController@create')->name('users.create');
 
@@ -46,19 +46,19 @@ Route::delete('/users/{user}', 'UserController@destroy')->name('users.destroy');
 
 //Route::get('libmember', 'UserController@userLogin')->name('users.userLogin');
 
-Route::get('libmember/showbooktomember/{book}', 'BookController@showBookToMember')->name('books.showbooktomember');
+Route::get('libmember/showbooktomember/{book}', 'BookController@showBookToMember')->name('books.showbooktomember')->middleware('auth');
 
-Route::get('libmember/lentbooks', 'UserController@getLentBooks')->name('users.lentbooks');
+Route::get('libmember/lentbooks', 'UserController@getLentBooks')->name('users.lentbooks')->middleware('auth');
 
-Route::get('/libmember/lend/{book}', 'BookController@lendBook')->name('books.lend');
-Route::get('/libmember/return/{book}', 'BookController@returnBook')->name('books.return');
+Route::get('/libmember/lend/{book}', 'BookController@lendBook')->name('books.lend')->middleware('auth');
+Route::get('/libmember/return/{book}', 'BookController@returnBook')->name('books.return')->middleware('auth');
 
 Route::get('libmember/nostock', function(){
     return view ('nostock');
 });
 
-Route::get('libmember/createreview/{book}', 'BookController@createReview')->name('books.createreview');
-Route::post('/reviews', 'BookController@storeReview')->name('books.storereview');
+Route::get('libmember/createreview/{book}', 'BookController@createReview')->name('books.createreview')->middleware('auth');
+Route::post('/reviews', 'BookController@storeReview')->name('books.storereview')->middleware('auth');
 
 
 Auth::routes();
