@@ -7,6 +7,7 @@ use App\Book;
 use App\Review;
 use App\Books_user;
 use Auth;
+use App\User;
 use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
@@ -212,7 +213,9 @@ class BookController extends Controller
     public function storeReview(Request $request)
     {
         $book = Book::findOrFail($request->get('book_id'));
-       
+
+        $oldreview = User::find(Auth::id())->reviews->where('book_id', $request->get('book_id'))->first();
+        if($oldreview!=NULL) $oldreview->delete();
         $review = new Review;
         $review->book_id = $request->get('book_id');
         if ($request->screen_name == "") {
@@ -220,7 +223,7 @@ class BookController extends Controller
             } else {
                 $review->screen_name = $request->get('screen_name');
             }
-        
+        $review->user_id = Auth::id();
         $review->stars = $request->get('stars');
         $review->comments = $request->get('comments');
 
