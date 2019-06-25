@@ -220,5 +220,6 @@ class BooksTableSeeder extends Seeder
             'aantal_aanwezig' => rand(0,5)
             ]
         ]);
+        factory(App\Book::class, 1000)->create();
     }
 }

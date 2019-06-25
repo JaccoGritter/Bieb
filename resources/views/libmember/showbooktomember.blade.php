@@ -22,8 +22,8 @@
 <br>
 <h5>Wat anderen er van vonden:</h5>
 
-@foreach ($book->reviews as $review)
-<p>{{ $review->screen_name }} gaf het boek 
+@foreach ($book->reviews->reverse() as $review)
+<p><b>{{ $review->screen_name }}</b> gaf het boek 
     <?php 
         for($i=0; $i<$review->stars; $i++) {
         echo('<i class="fas fa-star"></i>');
