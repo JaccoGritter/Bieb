@@ -1,4 +1,4 @@
-@extends('layouts\libmemberLayout')
+@extends('layouts\libmemberlayout')
 
 @section('content')
 
