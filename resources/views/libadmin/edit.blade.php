@@ -1,4 +1,4 @@
-@extends('layouts\libadminlayout')
+@extends('layouts.libadminlayout')
 
 @section('content')
 
