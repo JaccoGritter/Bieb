@@ -10,13 +10,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
     <title>Bibliotheek</title>
-    <!-- CSS And JavaScript -->
+    <!-- CSS and JavaScript -->
     <style>
     body {
         background-color:#d1e2ff;
     }
     </style>
-    
 
 </head>
 
