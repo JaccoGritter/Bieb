@@ -16,7 +16,7 @@
 <br>
 <p>Zoek op:</p>
 
-<form action="{{ route ('books.findBooks') }}" method="get">
+<form action="{{ route ('books.findbooks') }}" method="get">
     <div class="form-group">
         <label for="auteur">Auteur</label>
         <input type="text" class="form-control" name="auteur" value="" >

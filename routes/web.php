@@ -17,7 +17,7 @@ Route::get('/', function(){
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('books/findbooks', 'BookController@findBooks')->name('books.findBooks');
+Route::get('books/findbooks', 'BookController@findBooks')->name('books.findbooks');
 Route::get('books/viewallbooks', 'BookController@viewAllBooks')->name('books.viewallbooks');
 
 Route::get('/books', function(){
