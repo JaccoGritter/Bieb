@@ -65,7 +65,7 @@ class UserController extends Controller
      */
     public function show(user $user)
     {
-        return view('libmember.userIndex', compact('user'));
+        return view('libmember.userindex', compact('user'));
     }
 
     /** 
