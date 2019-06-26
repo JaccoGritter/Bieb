@@ -21,7 +21,7 @@ Route::get('books/findbooks', 'BookController@findBooks')->name('books.findBooks
 Route::get('books/viewallbooks', 'BookController@viewAllBooks')->name('books.viewallbooks');
 
 Route::get('/books', function(){
-    return 'Hallo';
+    return view('libadmin/adminindex');
 });
 
 Route::get('books/create', 'BookController@create')->name('books.create');
