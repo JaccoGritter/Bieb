@@ -1,3 +1,5 @@
+<img src="public/pictures/bieb.PNG" alt="screenshot">
+
 <h2>BIEB<h2>
 
 <p>This is a library web app for two types of users:</p>
