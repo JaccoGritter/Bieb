@@ -33,7 +33,7 @@
         
     </nav>
 
-    <div class="space-between"></div>
+    <div class="space-between justify-content-end"></div>
 
     <div class="container login-info"><p><em>{{Auth::user()->first_name}}&nbsp;{{ Auth::user()->last_name }} is ingelogd&nbsp;&nbsp;</em></p></div>
 
