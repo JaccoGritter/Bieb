@@ -42,6 +42,30 @@
         @yield('content')
 
     </div>
+
+    <footer class="footer text-center">
+    <div class="container">
+        <p>Volg ons op social media!</p>
+      <ul class="list-inline mb-5">
+        <li class="list-inline-item">
+            <a href="#">
+            <i class="fab fa-twitter fa-2x"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+            <a href="#">
+                <i class="fab fa-facebook fa-2x"></i>
+            </a>
+        </li>
+        <li class="list-inline-item">
+        <a href="#">
+        <i class="fab fa-instagram fa-2x"></i>
+          </a>
+        </li>
+      </ul>
+      <p class="text-muted small mb-0">Copyright &copy; Jacco Gritter 2019</p>
+    </div>
+  </footer>
 </body>
 
 </html>
