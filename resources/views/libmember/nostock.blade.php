@@ -8,7 +8,7 @@
 
 
 <div style="margin: 19px;">
-    <a href="{{ route('users.show', auth()->user() ) }}" class="btn btn-primary">Home</a>
+    <a href="{{ route('users.show', auth()->user() ) }}" class="btn">Home</a>
 </div>
 
 @endsection

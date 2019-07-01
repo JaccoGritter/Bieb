@@ -37,7 +37,7 @@ Route::get('/users', 'UserController@index')->name('users.index');
 
 Route::get('users/create', 'UserController@create')->name('users.create');
 
-Route::get('/users/{user}', 'UserController@show')->name('users.show');
+Route::get('/users/{user}', 'UserController@show')->name('users.show')->middleware('auth');
 Route::post('/users', 'UserController@store')->name('users.store');
 
 Route::get('/users/{user}/edit', 'UserController@edit')->name('users.edit');
@@ -63,5 +63,10 @@ Route::post('/reviews', 'BookController@storeReview')->name('books.storereview')
 
 Auth::routes();
 //Route::get('/logout', 'LogoutController@logout')->name('logout');
+Route::get('/logout', function(){
+    Session::flush();
+    Auth::logout();
+    return Redirect::to("/login");
+});
 
 

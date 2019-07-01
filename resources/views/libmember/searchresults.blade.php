@@ -8,7 +8,7 @@
 
 @else
 
-    <table class="table table-hover table-info">
+    <table class="table">
 
         <tablehead>
             <tr>
@@ -39,8 +39,6 @@
 
 @endif
 
-<div style="margin: 19px;">
-    <a href="{{ route('users.show', auth()->user() ) }}" class="btn btn-primary">Home</a>
-</div>
+
 
 @endsection

@@ -1,0 +1,95 @@
+   :root {
+    --main-bg-color: #25274D; 
+    --menu-color:#464866;
+    --button-color: #AAABB8;
+    --main-font-color: #fff;
+    --secondary-font-color:#AAABB8 ;
+    --table-bg-color: #2E9CCA;
+   }
+
+   /* :root {
+    --main-bg-color: #88BDBC; 
+    --menu-color:#112D32;
+    --button-color: #4F4A41;
+    --button-text-color: #FFF;
+    --main-font-color: #fff;
+    --secondary-font-color:#FBEEC1;
+    --table-bg-color: #254E58;
+   } */
+
+   @media (min-width: 1400px) {
+    .container {
+      width: 1200px;
+    }
+  }
+   
+   body {
+        
+        font-family: 'Roboto', sans-serif;
+        background-color:var(--main-bg-color);
+        color: var(--main-font-color);
+    }
+
+    
+    .mynavbar {
+       
+        font-family: 'Roboto', sans-serif;
+        background-color: var(--menu-color);
+        color:var(--main-font-color);
+        padding-top: 4px;
+        height: 3.75rem;
+        
+    }
+    .mynavbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+
+    }
+    
+    .mynavbar li {
+        display: inline;
+        
+    }
+    
+    .mynavbar a {
+        text-decoration: none;
+        color: var(--main-font-color);
+
+    }
+
+    .mynavbar p {
+        text-align: right;
+    }
+
+    .login-info {
+        text-align: right;
+    } 
+
+    .space-between {
+        margin-top: 88px;
+    }
+
+    .table {
+        background-color: var(--table-bg-color);
+        color: var(--main-font-color);
+        border-collapse: collapse;
+    }
+
+    .table a {
+        background-color: var(--table-bg-color);
+        color: var(--main-font-color);
+    }
+
+    td {
+        border: none;
+    }
+
+    .btn {
+        background-color: var(--button-color);
+        color: var(--button-text-color);
+    }
+    

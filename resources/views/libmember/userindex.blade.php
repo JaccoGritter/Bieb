@@ -2,13 +2,7 @@
 
 @section('content')
 
-<p>{{ $user->first_name}}&nbsp;{{ $user->last_name }} is ingelogd</p>
 
-
-<form method="POST" action="{{ route('logout') }}">
-  @csrf
-  <button type="submit" class="btn btn-secondary">Logout</button>
-</form>
 
 
 <h1>Welkom {{ $user->first_name }}</h1>
@@ -38,9 +32,8 @@
         </select>
     </div>
 
-<button type="submit" class="btn btn-primary">zoek</button>
+<button type="submit" class="btn">zoek</button>
 </form>
 <br>
 
-<a href="{{ route ('users.lentbooks') }}">Bekijk boeken in mijn bezit</a>
 @endsection

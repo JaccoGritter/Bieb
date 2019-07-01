@@ -7,7 +7,7 @@
 
     <h3>Boeken die je momenteel geleend hebt:</h3>
 
-    <table class="table table-info">
+    <table class="table">
 
     <tablehead>
         <tr>
@@ -40,7 +40,7 @@
 
 
 <div style="margin: 19px;">
-    <a href="{{ route('users.show', auth()->user() ) }}" class="btn btn-primary">Home</a>
+    <a href="{{ route('users.show', auth()->user() ) }}" class="btn">Home</a>
 </div>
 
 @endsection
